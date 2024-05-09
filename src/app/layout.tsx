@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar'
+import { Toaster } from '@/components/ui/toaster'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import {Inter}  from "next/font/google"
@@ -15,12 +16,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en' className={cn('bg-black text-red-500 antialiased light',inter.className)}>
-      <body className='min-h-screen pt-12 bg-black text-white antialiased'>
+    <html lang='en' className={cn('bg-white text-black antialiased light',inter.className)}>
+      <body className='min-h-screen pt-12 bg-white text-black antialiased'>
+        {/* @ts-expect-error Server Component */}
        <Navbar/>
         <div className='container max-w-7xl mx-auto h-full pt-12'>
           {children}
         </div>
+        <Toaster/>
       </body>
     </html>
   )
