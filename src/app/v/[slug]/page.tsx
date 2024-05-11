@@ -5,6 +5,7 @@ import { db } from '@/lib/db'
 import { INFINITE_SCROLLING } from '@/config'
 import { notFound } from 'next/navigation'
 import MiniPost from '@/components/MiniPost'
+import PostFeed from '@/components/PostFeed'
 
 interface pageProps {
   params:{
@@ -37,7 +38,7 @@ const page=async ({params}:PageProps) => {
     v/{subVayu.name}
   </h1>
   <MiniPost session={session}/> 
-  {/* feed showing to user */}
+  <PostFeed initialPosts={subVayu.posts} subVayuName={subVayu.name}/>
   </>
 }
 

@@ -3,6 +3,8 @@ import { db } from "@/lib/db"
 import { notFound } from "next/navigation"
 import {format} from 'date-fns'
 import SubscribeToggle from "@/components/SubscribeToggle"
+import Link from "next/link"
+import { buttonVariants } from "@/components/ui/Button"
 
 
 
@@ -78,6 +80,10 @@ const Layout =async ({children,params:{slug}}:{children:React.ReactNode
                          {subVayu.creatorId!==session?.user.id?(
                          <SubscribeToggle isSubscribed={isSubscribed} subVayuId={subVayu.id} subVayuName={subVayu.name}/>
                         ):null}
+                        <Link className={buttonVariants({
+                            variant:'outline',
+                            className:'w-full mb-6',
+                        })} href={`v/${slug}/submit`}>Create Post</Link>
                     </div>
                 </div>
             </div>
