@@ -6,7 +6,7 @@ import { FC, useRef } from 'react'
 import EditorOutput from './EditorOutput'
 
 interface PostProps {
-  subVayuName:string
+ subVayuName:string
  post: Post&{
     author:User
     votes:Vote[]
@@ -14,7 +14,7 @@ interface PostProps {
  commentAmt: number
 }
 
-const Post: FC<PostProps> = ({subVayuName,post,commentAmt}) => {
+const Posti: FC<PostProps> = ({subVayuName,post,commentAmt}) => {
   return <>
    <div className='rounded-md bg-white shadow'>
       <div className='px-6 py-4 flex justify-between'>
@@ -48,4 +48,4 @@ const Post: FC<PostProps> = ({subVayuName,post,commentAmt}) => {
   </>
 }
 
-export default Post
+export default Posti

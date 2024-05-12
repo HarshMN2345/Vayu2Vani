@@ -6,11 +6,11 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { INFINITE_SCROLLING } from '@/config';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
-import Post from './Post';
+import Posti from './Posti';
 
 interface PostFeedProps {
-  initialPosts: ExtendedPost[];
-  subVayuName?: string;
+  initialPosts: ExtendedPost[]
+  subVayuName?: string
 }
 
 const PostFeed: FC<PostFeedProps> = ({ initialPosts, subVayuName }) => {
@@ -21,7 +21,7 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, subVayuName }) => {
   });
   const { data: session } = useSession();
   const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(['infinite-query'], async ({ pageParam = 1 }) => {
-    const query = `/api/posts?limit=${INFINITE_SCROLLING}&page=${pageParam}` + (!!subVayuName ? `&subVayuName=${subVayuName}` : '');
+    const query = `/api/posts?limit=${INFINITE_SCROLLING}&page=${pageParam}` + (!!subVayuName ? `&subVayuName=${subVayuName}` : '')
     const { data } = await axios.get(query);
     return data as ExtendedPost[];
   }, {
@@ -44,14 +44,14 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, subVayuName }) => {
       }, 0);
       const currentVote = post.votes.find((vote) => vote.userId === session?.user.id);
       // Check if subVayu is defined before accessing its name property
-      const subVayuName = post.subVayu ? post.subVayu.name : 'Unknown';
+      const subVayuName = post.subVani ? post.subVani.name : '';
       if (index === posts.length - 1) {
         return (<li key={post.id} ref={ref}>
-            <Post commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>
+            <Posti commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>
           </li>);
       }
       else {
-        return <Post commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>;
+        return <Posti commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>;
       }
     })}
   </ul>);

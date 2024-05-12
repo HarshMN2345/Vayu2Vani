@@ -103,14 +103,16 @@ export const Editor: React.FC<EditorProps> = ({ subVayuId }) => {
             config: {
               uploader: {
                 async uploadByFile(file: File) {
-                  const [res]=await uploadFiles([file],'imageUploader')
-                  return{
-                    success:1,
-                    file:{
-                      url:res.fileUrl
-                    }
+                  // upload to uploadthing
+                  const [res] = await uploadFiles([file], 'imageUploader')
+
+                  return {
+                    success: 1,
+                    file: {
+                      url: res.fileUrl,
+                    },
                   }
-                },
+                }
               },
             },
           },

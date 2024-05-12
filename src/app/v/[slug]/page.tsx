@@ -38,7 +38,9 @@ const page=async ({params}:PageProps) => {
     v/{subVayu.name}
   </h1>
   <MiniPost session={session}/> 
+  {subVayu &&
   <PostFeed initialPosts={subVayu.posts} subVayuName={subVayu.name}/>
+}
   </>
 }
 
