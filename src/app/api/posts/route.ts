@@ -26,7 +26,7 @@ export async function GET(req:Request){
           subVayuName: z.string().nullish().optional(),
         })
         .parse({
-          subredditName: url.searchParams.get('subredditName'),
+          subVayuName: url.searchParams.get('subVayuName'),
           limit: url.searchParams.get('limit'),
           page: url.searchParams.get('page'),
         })

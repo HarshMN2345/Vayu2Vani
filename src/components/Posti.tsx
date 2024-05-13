@@ -44,7 +44,7 @@ const Posti: FC<PostProps> = ({subVayuName,post,commentAmt,votesAmt,currentVote}
         </div>
         <div className='bg-gray-50 z-20 text-sm px-4 py-4 sm:px-6'>
         <Link
-          href={`/r/${subVayuName}/post/${post.id}`}
+          href={`/v/${subVayuName}/post/${post.id}`}
           className='w-fit flex items-center gap-2'>
           <MessageSquare className='h-4 w-4' /> {commentAmt} comments
         </Link>

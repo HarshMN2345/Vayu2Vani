@@ -50,7 +50,7 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, subVayuName }) => {
       }, 0);
       const currentVote = post.votes.find((vote) => vote.userId === session?.user.id);
       // Check if subVayu is defined before accessing its name property
-      const subVayuName = post.subVani ? post.subVani.name : '';
+      const subVayuName = post.SubVani ? post.SubVani.name : 'react';
       if (index === posts.length - 1) {
         return (<li key={post.id} ref={ref}>
             <Posti currentVote={currentVote} votesAmt={votesAmt} commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>

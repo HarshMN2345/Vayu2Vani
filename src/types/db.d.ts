@@ -1,8 +1,8 @@
-import { Post, User,SubVani,User,Comment} from "@prisma/client";
+import { Post,Vote,SubVani,User,Comment} from "@prisma/client";
 
 export type ExtendedPost=Post&{
     votes:Vote[]
     author:User
     comments:Comment[]
-    subVani?: SubVani;
+    SubVani?: SubVani;
 }
