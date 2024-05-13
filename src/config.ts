@@ -1,1 +1,1 @@
-export const INFINITE_SCROLLING=5
+export const INFINITE_SCROLLING=100
