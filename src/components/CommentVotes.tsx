@@ -85,7 +85,7 @@ const CommentVotes: FC<CommentVotesProps> = ({
         aria-label='upvote'>
         <ArrowBigUp
           className={cn('h-5 w-5 text-zinc-700', {
-            'text-emerald-500 fill-emerald-500': currentVote?.type === 'UP',
+            'text-violet-500 fill-violet-500': currentVote?.type === 'UP',
           })}
         />
       </Button>
@@ -100,7 +100,7 @@ const CommentVotes: FC<CommentVotesProps> = ({
         onClick={() => vote('DOWN')}
         size='xs'
         className={cn({
-          'text-emerald-500': currentVote?.type === 'DOWN',
+          'text-violet-500': currentVote?.type === 'DOWN',
         })}
         variant='ghost'
         aria-label='downvote'>

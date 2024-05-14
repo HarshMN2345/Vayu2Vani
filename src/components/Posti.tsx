@@ -29,7 +29,7 @@ const Posti: FC<PostProps> = ({subVayuName,post,commentAmt,votesAmt,currentVote}
                 {subVayuName?(<><a href={`/v/${subVayuName}`} className='underline text-zinc-900 text-sm underline-offset-2'>v/{subVayuName}</a>
                 <span className='px-1'>.</span>
                 </>):null}
-                <span>Posted by u/{post.author.name}</span>
+                <span>Posted by u/{post.author.username}</span>
                 <span className='px-1'>.</span>
                  {formatTimeToNow(new Date(post.createdAt))}
               </div>
