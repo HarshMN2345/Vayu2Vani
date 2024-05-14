@@ -1,5 +1,4 @@
 
-import { PageProps } from '../../../../.next/types/app/layout'
 import { getAuthSession } from '@/lib/auth'
 import { db } from '@/lib/db'
 import { INFINITE_SCROLLING } from '@/config'
@@ -7,7 +6,7 @@ import { notFound } from 'next/navigation'
 import MiniPost from '@/components/MiniPost'
 import PostFeed from '@/components/PostFeed'
 
-interface pageProps {
+interface PageProps {
   params:{
     slug:string
   }
