@@ -53,11 +53,11 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, subVayuName }) => {
       const subVayuName = post.SubVani ? post.SubVani.name : 'react';
       if (index === posts.length - 1) {
         return (<li key={post.id} ref={ref}>
-            <Posti currentVote={currentVote} votesAmt={votesAmt} commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>
+            <Posti key={post.id} currentVote={currentVote} votesAmt={votesAmt} commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>
           </li>);
       }
       else {
-        return <Posti currentVote={currentVote} votesAmt={votesAmt} commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>;
+        return <Posti  key={post.id} currentVote={currentVote} votesAmt={votesAmt} commentAmt={post.comments.length} post={post} subVayuName={subVayuName}/>;
       }
     })}
   </ul>);
